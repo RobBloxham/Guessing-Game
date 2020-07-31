@@ -4,7 +4,7 @@
 let secretNum, currentGuess, guessList, isWinner;
 
 /*------Cached Element References------*/
-// const kazoo = new Audio('audio/kazoo.wav');
+const kazoo = new Audio('audio/kazoo.wav');
 const titleEl = document.querySelector('h1')
 const messageEl = document.getElementById('message');
 const guessesEl = document.getElementById('prevGuesses');
@@ -49,7 +49,7 @@ function checkGuess (guess) {
     } else if (guess === secretNum) {
         titleEl.className = "animate__animated animate__bounce"
         confetti.start(1500)
-        // setTimeout(function(){kazoo.play();},1000);
+        setTimeout(function(){kazoo.play();},1000);
         messageEl.className = 'winner';
         isWinner = true;
         if (guessList.length === 0) {
