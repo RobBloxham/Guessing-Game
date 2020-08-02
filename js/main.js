@@ -18,10 +18,19 @@ resetBtn.addEventListener('click', function() {
     init();
 });
 
+
+guessInput.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("guessButton").click();
+    }
+})
+
 guessBtn.addEventListener('click', function() {
     if (guessList.length === 0) {
         guessesEl.innerText = 'Previous Guesses:'
     }
+
     if (isWinner === false) {
         checkGuess(parseInt(guessInput.value));
     }
